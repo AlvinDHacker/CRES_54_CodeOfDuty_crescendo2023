@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Heart Disease Prediction{% endblock title %}
+{% block content %}
+<br>
+<div class="container my-3">
+    <h2>Enter Your Details</h2>
+    <form action="/heart" method="POST">
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" step="0" class="form-control" name="age" id="age">
+        </div>
+        <div class="mb-3">
+            <label for="sex" class="form-label">Sex</label>
+            <input type="text" class="form-control" name="sex" id="sex">
+        </div>
+        <div class="mb-3">
+            <label for="cp" class="form-label">Chest pain type number: </label>
+            <input type="number" step="0" class="form-control" name="cp" id="cp">
+        </div>
+        <div class="mb-3">
+            <label for="rbp" class="form-label">Resting blood pressure</label>
+            <input type="number" step="0.001" class="form-control" name="rbp" id="rbp">
+        </div>
+        <div class="mb-3">
+            <label for="chol" class="form-label">Serum cholestoral in mg/dI</label>
+            <input type="number" step="0.001" class="form-control" name="chol" id="chol">
+        </div>
+        <div class="mb-3">
+            <label for="fbs" class="form-label">Fasting blood sugar > 120 mg/di</label>
+            <input type="number" step="0.001" class="form-control" name="fbs" id="fbs">
+        </div>
+        <div class="mb-3">
+            <label for="recg" class="form-label">Resting electrocardiographic results (values 0,1,2)</label>
+            <input type="number" step="0.001" class="form-control" name="recg" id="recg">
+        </div>
+        <div class="mb-3">
+            <label for="mhra" class="form-label">Maximum heart rate achieved</label>
+            <input type="number" step="0.001" class="form-control" name="mhra" id="mhra">
+        </div>
+        <div class="mb-3">
+            <label for="exia" class="form-label">Exercise induced angina</label>
+            <input type="number" step="0.001" class="form-control" name="exia" id="exia">
+        </div>
+        <div class="mb-3">
+            <label for="oldpeak" class="form-label">Oldpeak = ST depression induced by exercise relative to rest</label>
+            <input type="number" step="0.001" class="form-control" name="oldpeak" id="oldpeak">
+        </div>
+        <div class="mb-3">
+            <label for="slope" class="form-label">The slope of the peak exercise ST segment</label>
+            <input type="number" step="0.001" class="form-control" name="slope" id="slope">
+        </div>
+        <div class="mb-3">
+            <label for="vcf" class="form-label">Number of major vessels (0-3) colored by flourosopy</label>
+            <input type="number" step="0.001" class="form-control" name="vcf" id="vcf">
+        </div>
+        <div class="mb-3">
+            <label for="thal" class="form-label">Thalassemia: 0 for Yes, 1 for No</label>
+            <input type="number" step="0" class="form-control" name="thal" id="thal">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+{% block title %}
+Dashboard
+{% endblock title %}
+{% block content %}
+<br>
+<div class="container text-center">
+    <div class="Thead">
+        Data Logs
+    </div>
+    <br>
+    <div class="row g-0 text-center">
+        <div class="col-sm-6 col-md-8">
+            <div class="container p-3 myshadow" style="background-color: rgba(05, 93, 13, 0.1);">
+                <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-1 py-4">
+                            <div class="d-flex">
+                                <div class="bg-warning curves container ms-2 p-2 myshadow">
+                                    Date : 
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.date}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1 py-4">
+                            <div class="d-flex">
+                                <div class="bg-warning curves container ms-2 p-2 myshadow">
+                                    Time :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-2 row-cols-lg-2 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadowr">
+                                    Name :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.firstname + " " + user.lastname}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Age :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.age}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Gender :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.gender}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Blood Pressure :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Blood Grp :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.bloodgrp}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Heart Attack :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.heart_attack}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Weight :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.weight}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Height :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">{{user.height}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Allergies :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Next Vaccination :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Medication :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Past Medications :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Diabetes :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Heart Disease :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex py-2">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Parkinsons :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 px-5">
+            <img src="static/images/pers5.png" style="position: absolute; top: 30px; left: 50px; height: 510px;" />
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row g-0 text-center">
+        <div class="col-6 col-md-4 px-3">
+            <img src="static/images/pers6.png" style="position: absolute; right: 80px; height: 510px;" />
+        </div>
+        <div class="col-sm-6 col-md-8">
+            <div class="container p-3 myshadow" style="background-color: rgba(05, 93, 13, 0.1);">
+                <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-1 py-4">
+                            <div class="d-flex">
+                                <div class="bg-warning curves container ms-2 p-2 myshadow">
+                                    Date :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1 py-4">
+                            <div class="d-flex">
+                                <div class="bg-warning curves container ms-2 p-2 myshadow">
+                                    Time :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Name :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Age :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Gender :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Blood Pressure :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Blood Grp :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Heart Attack :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Weight :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Height :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Allergies :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Next Vaccination :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Medication :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Past Medications :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Diabetes :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+                                    Heart Disease :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-1">
+                            <div class="d-flex">
+                                <div class="bg-primary curves container ms-2 p-2 myshadow">
+
+                                    Parkinsons :
+                                </div>
+                                <div class="bg-soft-dark curves container p-2 text-dark">Value</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

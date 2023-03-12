@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block extra_css1 %} static/css/login_form.css {% endblock extra_css1 %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<form method="POST">
+    <div class="my_container">
+        <h1>Sign In</h1>
+        <div class="box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" name="email" id="email" placeholder="Enter email">
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" name="password" id="password" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </div>
+</form>
+{% endblock content %}

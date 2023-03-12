@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Parkinson Disease Prediction{% endblock title %}
+{% block content %}
+<br>
+<div class="container my-3">
+    <h2>Enter Your Details</h2>
+    <form action="/park" method="POST">
+        <div class="mb-3">
+            <label for="mdvp_fo" class="form-label">mdvp_fo</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_fo" id="mdvp_fo">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_fhi" class="form-label">mdvp_fhi</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_fhi" id="mdvp_fhi">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_flo" class="form-label">mdvp_flo</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_flo" id="mdvp_flo">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_jitter" class="form-label">mdvp_jitter</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_jitter" id="mdvp_jitter">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_jitter_abs" class="form-label">mdvp_jitter_abs</label>
+            <input type="number" step="0.00000001"" class="form-control" name="mdvp_jitter_abs" id="mdvp_jitter_abs">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_rap" class="form-label">mdvp_rap</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_rap" id="mdvp_rap">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_ppq" class="form-label">mdvp_ppq</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_ppq" id="mdvp_ppq">
+        </div>
+        <div class="mb-3">
+            <label for="jitter_ddp" class="form-label">jitter_ddp</label>
+            <input type="number" step="0.00000001" class="form-control" name="jitter_ddp" id="jitter_ddp">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_shimmer" class="form-label">mdvp_shimmer</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_shimmer" id="mdvp_shimmer">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_shimmer_db" class="form-label">mdvp_shimmer_db</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_shimmer_db" id="mdvp_shimmer_db">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_shimmer_apq3" class="form-label">mdvp_shimmer_apq3</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_shimmer_apq3" id="mdvp_shimmer_apq3">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_shimmer_apq5" class="form-label">mdvp_shimmer_apq5</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_shimmer_apq5" id="mdvp_shimmer_apq5">
+        </div>
+        <div class="mb-3">
+            <label for="mdvp_apq" class="form-label">mdvp_apq</label>
+            <input type="number" step="0.00000001" class="form-control" name="mdvp_apq" id="mdvp_apq">
+        </div>
+        <div class="mb-3">
+            <label for="shimmer_dda" class="form-label">shimmer_dda</label>
+            <input type="number" step="0.00000001" class="form-control" name="shimmer_dda" id="shimmer_dda">
+        </div>
+        <div class="mb-3">
+            <label for="nhr" class="form-label">nhr</label>
+            <input type="number" step="0.00000001" class="form-control" name="nhr" id="nhr">
+        </div>
+        <div class="mb-3">
+            <label for="hnr" class="form-label">hnr</label>
+            <input type="number" step="0.00000001" class="form-control" name="hnr" id="hnr">
+        </div>
+        <div class="mb-3">
+            <label for="rpde" class="form-label">rpde</label>
+            <input type="number" step="0.00000001" class="form-control" name="rpde" id="rpde">
+        </div>
+        <div class="mb-3">
+            <label for="dfa" class="form-label">dfa</label>
+            <input type="number" step="0.00000001" class="form-control" name="dfa" id="dfa">
+        </div>
+        <div class="mb-3">
+            <label for="spread1" class="form-label">spread1</label>
+            <input type="number" step="-9.99999999" class="form-control" name="spread1" id="spread1">
+        </div>
+        <div class="mb-3">
+            <label for="spread2" class="form-label">spread2</label>
+            <input type="number" step="0.00000001" class="form-control" name="spread2" id="spread2">
+        </div>
+        <div class="mb-3">
+            <label for="d2" class="form-label">d2</label>
+            <input type="number" step="0.00000001" class="form-control" name="d2" id="d2">
+        </div>
+        <div class="mb-3">
+            <label for="ppe" class="form-label">ppe</label>
+            <input type="number" step="0.00000001" class="form-control" name="ppe" id="ppe">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock content %}
