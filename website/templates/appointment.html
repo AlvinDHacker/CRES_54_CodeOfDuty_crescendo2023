@@ -4,55 +4,55 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 {% endblock extra_css2 %}
-{% block title %}Prescriptions{% endblock title %}
+{% block title %}Appointments{% endblock title %}
 {% block content %}
 <br>
 <div class="container my-3">
-    <a href="todo.html" style="text-decoration: none; color: black;">
-        <h2>Doctor's Prescriptions (Advice)</h2>
+    <a href="appointment.html" style="text-decoration: none; color: black;">
+        <h2>Doctor Appointments</h2>
     </a>
-    <form action="/todo" method="POST">
+    <form action="/appoint" method="POST">
         <div class="mb-3">
-            <label for="title" class="form-label">Medicine name</label>
-            <input type="text" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+            <label for="t" class="form-label">Appointment Title</label>
+            <input type="text" class="form-control" name="t" id="t" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-            <label for="desc" class="form-label">Description of medicine intake</label>
-            <input type="text" class="form-control" name="desc" id="desc">
+            <label for="d" class="form-label">Appointment Schedule Time</label>
+            <input type="datetime-local" class="form-control" name="d" id="d">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
 <div class="container my-3">
-    <h2>Your Prescriptions</h2>
-    {% if user.todos|length == 0 %}
+    <h2>Your Appointments</h2>
+    {% if user.appoints|length == 0 %}
     <div class="alert alert-primary" role="alert">
-        No Prescriptions found. Add your first Prescription for your patient now!
+        No Appointments found. Add your first Appointment for your patient now!
     </div>
     {% else %}
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">SNo</th>
-                <th scope="col">Medicine</th>
-                <th scope="col">Description</th>
+                <th scope="col">Title</th>
+                <th scope="col">Schedule Time</th>
                 <th scope="col">Time Created</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
 
-            {% for todo in user.todos %}
+            {% for appointed in user.appoints %}
             <tr>
                 <th scope="row">{{loop.index}}</th>
-                <td>{{todo.title}}</td>
-                <td>{{todo.desc}}</td>
-                <td>{{todo.date_created}}</td>
+                <td>{{appointed.t}}</td>
+                <td>{{appointed.d}}</td>
+                <td>{{appointed.dc}}</td>
                 <td>
-                    <a href="/update/{{todo.id}}"><button type="button"
+                    <a href="/appoint_update/{{appointed.id}}"><button type="button"
                             class="btn btn-primary btn-sm mx-1">Update</button></a>
-                    <a href="/delete/{{todo.id}}"><button type="button"
+                    <a href="/appoint_delete/{{appointed.id}}"><button type="button"
                             class="btn btn-primary btn-sm mx-1">Delete</button></a>
                 </td>
             </tr>

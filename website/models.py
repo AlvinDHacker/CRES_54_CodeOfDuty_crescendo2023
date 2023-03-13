@@ -15,7 +15,16 @@ class To_Dos(db.Model): # type: ignore
     date_created = db.Column(db.DateTime, default = datetime.datetime.now)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self) -> str:
-        return f"{self.sno} - {self.title}"
+        return f"{self.id} - {self.title}"
+    
+class Appoint(db.Model): # type: ignore
+    id = db.Column(db.Integer, primary_key=True)
+    t = db.Column(db.String(200), nullable = False)
+    d = db.Column(db.String(500), nullable = False)
+    dc = db.Column(db.DateTime, default = datetime.datetime.now)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    def __repr__(self) -> str:
+        return f"{self.id} - {self.t}"
 
 class User(db.Model, UserMixin): # type: ignore
     id = db.Column(db.Integer, primary_key=True)
@@ -32,19 +41,8 @@ class User(db.Model, UserMixin): # type: ignore
     heart_attack = db.Column(db.Integer)
     notes = db.relationship('Note')
     todos = db.relationship('To_Dos')
+    appoints = db.relationship('Appoint')
     diabetes = db.relationship('Diabetes')
-    # details = db.relationship('Details')
-
-# class Details(db.Model): # type: ignore
-#     id = db.Column(db.Integer, primary_key=True)
-#     age = db.Column(db.Integer)
-#     gender = db.Column(db.String(150), nullable=False)
-#     bloodgrp = db.Column(db.String(150), nullable=False)
-#     weight = db.Column(db.Integer)
-#     height = db.Column(db.Integer)
-#     heart_attack = db.Column(db.Integer)
-#     date_created = db.Column(db.DateTime, default = datetime.datetime.now)
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class Diabetes(db.Model): # type: ignore
     id = db.Column(db.Integer, primary_key=True)

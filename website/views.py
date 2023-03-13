@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Note, To_Dos, User, Diabetes, Heart, Park
+from .models import Note, To_Dos, User, Diabetes, Heart, Park, Appoint
 from . import db
 import json
 from .diabetes import my_diabetes
@@ -109,6 +109,46 @@ def delete_todo(id):
     todo = To_Dos.query.filter_by(id=id).first()
     return render_template("todo.html", todo=todo, user=current_user)
 
+@views.route('/appoint', methods=['GET', 'POST'])
+def appoint_html():
+    if request.method == 'POST':
+        t = request.form['t']
+        d = request.form['d']
+        # ti = str(t)
+        # de = str(d)
+        if len(t) < 1 or len(d) < 1:
+            flash("Appointment is too short!", category='error')
+        else:
+            appointed = Appoint(t=t, d=d, user_id=current_user.id)
+            db.session.add(appointed)
+            db.session.commit()
+            flash("Appointment added!", category='success')
+    return render_template("appointment.html", user=current_user)
+
+@views.route('/appoint_update/<int:id>', methods=['GET', 'POST'])
+def update_appoint(id):
+    if request.method == 'POST':
+        t = request.form['t']
+        d = request.form['d']
+        appointed = Appoint.query.filter_by(id=id).first()
+        appointed.t = t
+        appointed.d = d
+        db.session.add(appointed)
+        db.session.commit()
+        return redirect('/appoint')
+    appointed = Appoint.query.filter_by(id=id).first()
+    return render_template("appoint_update.html", appointed=appointed, user=current_user)
+
+@views.route('/appoint_delete/<int:id>')
+def delete_appoint(id):
+    appointed = Appoint.query.filter_by(id=id).first()
+    if appointed.user_id == current_user.id:
+        db.session.delete(appointed)
+        db.session.commit()
+        return redirect('/appoint')
+    appointed = Appoint.query.filter_by(id=id).first()
+    return render_template("appointment.html", appointed=appointed, user=current_user)
+
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
     note = json.loads(request.data)
@@ -142,7 +182,7 @@ def diabetes():
             return redirect('/diab_yes')
         else: 
             flash('You cannot have Diabetes', category="success")
-            return redirect('/diab_yes')
+            return redirect('/diab_no')
     return render_template('diabetes_form.html', user=current_user)
 
 @views.route('/heart', methods=['POST', 'GET'])
